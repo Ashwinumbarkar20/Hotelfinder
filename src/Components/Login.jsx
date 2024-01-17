@@ -39,7 +39,7 @@ catch(e){
 
   return (
 <>
-   (<LoginSection className='login'>
+   <LoginSection className='login'>
     <h1 className='heading'>Enter Your Mobile Number</h1>
     <p className='note'>We will send you the 6 digit verification code</p>
     <input className='mobile-number' type="text" 
@@ -52,7 +52,7 @@ catch(e){
     <p style={{"color":"red"}}>{apiError}</p>
     <button className="otp-send"type="button" onClick={handleLoginApi}>Send Code</button>
     
-  </LoginSection>)
+  </LoginSection>
  </>   
   )
 }
