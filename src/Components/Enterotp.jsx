@@ -68,7 +68,7 @@ export default function EnterOtp() {
         fetchHotelData();
         navigate('/Home');
       }
-    }, [setHotelData,user.token]);
+    }, [user.token]);
 
   return (
     <OtpSection>
