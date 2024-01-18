@@ -17,31 +17,39 @@ export default function Home() {
     navigate("/");
    }
   return (
-    <Maindiv>
-   <header className='container-fluid p-2'>
+    <>
+      {user.token?(<Maindiv>
+      <header className='container-fluid p-2'>
+      
+      <div> <FaLocationDot /> Delhi</div>
+     <div>Welcome, <span style={{"color":"#FF6D6A"}}> {user.username} </span></div>
+     <button className='btn border' style={{"color":"#FF6D6A"}} onClick={handlelogut}>Logout</button>
+     </header>
+       
+       <section className='container mt-3'>
+   <h1 style={{"textAlign":"center"}}>List of Hotels in Delhi</h1>
+   <div className='container '>
+   <div className='row justify-content-center'>
+     {
+       
+       hotelData.map((hotel)=>
+       <Link className="col-12 col-sm-6 col-md-4 col-lg-4" key={hotel.restaurant_id} style={{"textDecoration":"none","color":'inherit'}}to={`/hotel-details/${hotel.restaurant_id}`}>
+       <Hotelcard   hotel={hotel}/>
    
-   <div> <FaLocationDot /> Delhi</div>
-  <div>Welcome, <span style={{"color":"#FF6D6A"}}> {user.username} </span></div>
-  <button className='btn border' style={{"color":"#FF6D6A"}} onClick={handlelogut}>Logout</button>
-  </header>
-    
-    <section className='container mt-3'>
-<h1 style={{"textAlign":"center"}}>List of Hotels in Delhi</h1>
-<div className='container '>
-<div className='row justify-content-center'>
-  {
-    
-    hotelData.map((hotel)=>
-    <Link className="col-12 col-sm-6 col-md-4 col-lg-4" key={hotel.restaurant_id} style={{"textDecoration":"none","color":'inherit'}}to={`/hotel-details/${hotel.restaurant_id}`}>
-    <Hotelcard   hotel={hotel}/>
+       </Link>
+       )
+     }
+     </div>
+   </div>
+       </section>
+       </Maindiv>)
+       :(<h1 style={{textAlign:"center"}}>Session expired, Please login again <Link to="/"><span>Go to Login page</span></Link></h1>)}
 
-    </Link>
-    )
-  }
-  </div>
-</div>
-    </section>
-    </Maindiv>
+    </>
+    
+
+
+    
   )
 }
 const Maindiv=styled.div`

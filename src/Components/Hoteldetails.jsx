@@ -11,7 +11,8 @@
         const navigate = useNavigate();
         
     return (
-        <Maindiv>
+        <>
+            {user.token?<Maindiv>
         
         <div className='container-fluid d-flex flex-row justify-content-between align-items-center'>
         <p className='m-3 fw-bold'>Welcome,<span style={{"color":"#FF6D6A"}}>{user.username}</span></p>
@@ -38,7 +39,9 @@
         
             
     
-        </Maindiv>
+        </Maindiv>:(<h1> please Login,first <Link to="/"><span></span></Link></h1>)}
+        </>
+        
     )
     }
     const Maindiv=styled.section`

@@ -7,7 +7,7 @@ const AppContext = createContext();
  const MyContextProvider = ({ children }) => {
   
     const[isLogin,setisLogin]=useState(false);
-    const[mobileNumber,setMobileNumber]=useState(0);
+    const[mobileNumber,setMobileNumber]=useState();
     const[user,setUser]=useState({
         "username":"",
         "token":"",
