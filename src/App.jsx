@@ -7,6 +7,7 @@ import {  Routes,Route,Link} from "react-router-dom";
 import { AppContext } from './Context';
 import Enterotp from './Components/Enterotp'
 import React, { useContext } from 'react'
+import Hoteldetails from './Components/Hoteldetails';
 function App() {
 
  
@@ -19,7 +20,7 @@ function App() {
 
 <Route path="/EnterOtp" element={<Enterotp/>} />
 
-
+<Route path="/hotel-details/:restaurant_id" element={<Hoteldetails/>} />
       
     </Routes>
     
