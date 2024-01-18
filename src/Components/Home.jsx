@@ -13,7 +13,7 @@ export default function Home() {
     setUser(
       {"user.token":"",
     "user.username":""});
-    setMobileNumber(0);
+    setMobileNumber();
     navigate("/");
    }
   return (
@@ -29,11 +29,11 @@ export default function Home() {
        <section className='container mt-3'>
    <h1 style={{"textAlign":"center"}}>List of Hotels in Delhi</h1>
    <div className='container '>
-   <div className='row justify-content-center'>
+   <div className='row d-flex justify-content-center'>
      {
        
        hotelData.map((hotel)=>
-       <Link className="col-12 col-sm-6 col-md-4 col-lg-4" key={hotel.restaurant_id} style={{"textDecoration":"none","color":'inherit'}}to={`/hotel-details/${hotel.restaurant_id}`}>
+       <Link className="col-12 col-md-6 col-lg-4" key={hotel.restaurant_id} style={{"textDecoration":"none","color":'inherit'}}to={`/hotel-details/${hotel.restaurant_id}`}>
        <Hotelcard   hotel={hotel}/>
    
        </Link>
